@@ -2,7 +2,6 @@
 using MtvCoUkParser.DTO;
 using MtvCoUkParser.Extensions;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MtvCoUkParser.Services.Implements
 {
@@ -31,8 +30,6 @@ namespace MtvCoUkParser.Services.Implements
                 OverlayImgUrl = GetImgUrl(articleNode, true)
             };
 
-            //track.VideoUrl = await GetVideoUrl(chartId, track.Id);
-
             return track;
         }
 
@@ -47,24 +44,5 @@ namespace MtvCoUkParser.Services.Implements
             if (!isOverlay) return imgNode.Attributes["src"].Value;
             else return imgNode.Attributes["data-overlay-image"].Value;
         }
-
-        //private async Task<string> GetVideoUrl(string chartId, string playerId)
-        //{
-        //    var player = await _crudeData.ConcretePlayerAsync(chartId, playerId);
-
-        //    var vmItems = player.ChildNodes;
-        //    var vmItem = vmItems[1];
-
-        //    string oldClass = "vimn-videoplayer-item";
-        //    string newClass = "vimn-videoplayer-item pjs edge-player edge-desktop-platform edge-international-platform edge-gui-cc-active-state edge-gui-cc-disabled-state edge-gui-content-active-state edge-gui-pause-active-state edge-gui-active-state";
-
-        //    vmItem.ReplaceClass(newClass, oldClass);
-
-        //    var vmItemsChilds = vmItem.ChildNodes;
-        //    var video = vmItemsChilds.FirstOrDefault(n => n.Name == "video");
-        //    string src = video.Attributes["src"].Value;
-        //    return src;
-
-        //}
     }
 }

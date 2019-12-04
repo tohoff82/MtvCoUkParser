@@ -24,7 +24,6 @@ namespace MtvCoUkParser.Services.Implements
             {
                 titles.Add(chart.ChildNodes.FirstOrDefault(n => n.Name == "h2"));
             }
-            //var a = charts.Select(n => n.ChildNodes.FirstOrDefault().Name == "h2");
             return titles;
         }
 
@@ -32,14 +31,6 @@ namespace MtvCoUkParser.Services.Implements
         {
             var dom = await htmlWeb.LoadFromWebAsync(string.Concat(chartsBaseUri, chartId));
             return dom.DocumentNode.SelectNodes("//article");
-        }
-
-        public async Task<HtmlNode> ConcretePlayerAsync(string chartId, string playerId)
-        {
-            // dont scrupping
-            var dom = await htmlWeb.LoadFromWebAsync(string.Concat(chartsBaseUri, chartId, playerId));
-            //return dom.DocumentNode.SelectSingleNode("//div[@class='vimn-videoplayer']");
-            return dom.DocumentNode.SelectSingleNode("//div[@class='edge-gui-timer']");
         }
 
         private async Task<IEnumerable<HtmlNode>> ChartsAsync()

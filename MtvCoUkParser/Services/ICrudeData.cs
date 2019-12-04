@@ -8,6 +8,5 @@ namespace MtvCoUkParser.Services
     {
         Task<IEnumerable<HtmlNode>> GetChartTitlesAsync();
         Task<HtmlNodeCollection> ConcreteChartAsync(string chartPath);
-        Task<HtmlNode> ConcretePlayerAsync(string chartId, string playerId);
     }
 }
