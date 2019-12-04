@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using MtvCoUkParser.Services;
 using MtvCoUkParser.Services.Implements;
 
 namespace MtvCoUkParser
 {
-    static class Injector
+    static class Injection
     {
         public static IServiceProvider Provider { get; private set; }
 

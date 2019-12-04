@@ -9,14 +9,14 @@ namespace MtvCoUkParser
     public class MtvDriver : IMtvDriver
     {
         public MtvDriver()
-            => Injector.Startup();
+            => Injection.Startup();
 
         public async Task<Dictionary<string, string>> GetChartNamesAsync()
-            => await Injector.Provider.GetService<INameCreatortor>()
+            => await Injection.Provider.GetService<INameCreatortor>()
                         .GetChartNamesAsync();
 
         public async Task<Chart> GetChartAsync(string chartId)
-            => await Injector.Provider.GetService<IChartCreator>()
+            => await Injection.Provider.GetService<IChartCreator>()
                         .CreateChartAsync(chartId);
     }
 }
