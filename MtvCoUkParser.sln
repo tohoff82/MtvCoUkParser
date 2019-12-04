@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtvCoUkParser", "MtvCoUkParser\MtvCoUkParser.csproj", "{D1CCDD4A-EB71-4D9E-AEC0-B20EAB7F0B6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser.Test", "Parser.Test\Parser.Test.csproj", "{90F47360-2772-471B-8CE6-26BF9F680D9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D1CCDD4A-EB71-4D9E-AEC0-B20EAB7F0B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1CCDD4A-EB71-4D9E-AEC0-B20EAB7F0B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1CCDD4A-EB71-4D9E-AEC0-B20EAB7F0B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F47360-2772-471B-8CE6-26BF9F680D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F47360-2772-471B-8CE6-26BF9F680D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F47360-2772-471B-8CE6-26BF9F680D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F47360-2772-471B-8CE6-26BF9F680D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
