@@ -35,7 +35,7 @@ namespace MtvCoUkParser.Services.Implements
             {
                 if (article.Attributes["class"].Value.Contains("playlist-item chart-item"))
                 {
-                    var track = await _trackCtor.CreateTrack(article, name.ToPathId(true));
+                    var track = _trackCtor.CreateTrack(article, name.ToPathId(true));
                     chart.PlayList.Add(track.Rank, track);
                 }
                 else continue;

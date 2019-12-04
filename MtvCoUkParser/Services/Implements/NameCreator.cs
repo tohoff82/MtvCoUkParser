@@ -13,7 +13,7 @@ namespace MtvCoUkParser.Services.Implements
             _crudeData = crudeData;
         }
 
-        public async Task<IDictionary<string, string>> GetChartNamesAsync()
+        public async Task<Dictionary<string, string>> GetChartNamesAsync()
         {
             var names = new Dictionary<string, string>();
             var tn = await _crudeData.GetChartTitlesAsync();

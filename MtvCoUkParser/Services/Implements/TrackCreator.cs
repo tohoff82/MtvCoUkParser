@@ -15,23 +15,21 @@ namespace MtvCoUkParser.Services.Implements
             _crudeData = crudeData;
         }
 
-        public async Task<Track> CreateTrack(HtmlNode articleNode, string chartId)
+        public Track CreateTrack(HtmlNode articleNode, string chartId)
         {
-            var track = new Track();
-
-            var articleItems = articleNode.ChildNodes;
-            var divItem = articleItems.FirstOrDefault(n => n.Name == "div");
-            var divItems = divItem.ChildNodes;
+            var divItems = articleNode.ChildNodes.FirstOrDefault(n => n.Name == "div").ChildNodes; ;
             var figure = divItems.FirstOrDefault(n => n.Name == "figure");
 
-            track.Rank = int.Parse(GetInerText(divItems.FirstOrDefault(t => t.Name == "span")));
-            track.Name = GetInerText(divItems.FirstOrDefault(t => t.Name == "h3")).ToLower();
-            track.Artist = GetInerText(divItems.FirstOrDefault(t => t.Name == "p")).ToLower();
+            var track = new Track
+            {
+                Id = GetInerText(divItems.FirstOrDefault(t => t.Name == "h3")).ToLower().ToPathId(),
+                Rank = int.Parse(GetInerText(divItems.FirstOrDefault(t => t.Name == "span"))),
+                Name = GetInerText(divItems.FirstOrDefault(t => t.Name == "h3")).ToLower(),
+                Artist = GetInerText(divItems.FirstOrDefault(t => t.Name == "p")).ToLower(),
 
-            track.PromoImgUrl = GetImgUrl(figure.FirstChild, false);
-            track.OverlayImgUrl = GetImgUrl(articleNode, true);
-
-            track.Id = track.Name.ToPathId();
+                PromoImgUrl = GetImgUrl(figure.FirstChild, false),
+                OverlayImgUrl = GetImgUrl(articleNode, true)
+            };
 
             //track.VideoUrl = await GetVideoUrl(chartId, track.Id);
 

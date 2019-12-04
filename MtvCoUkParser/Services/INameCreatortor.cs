@@ -5,7 +5,7 @@ namespace MtvCoUkParser.Services
 {
     public interface INameCreatortor
     {
-        Task<IDictionary<string, string>> GetChartNamesAsync();
+        Task<Dictionary<string, string>> GetChartNamesAsync();
         Task<string> GetChartNameByChartId(string chartId);
     }
 }

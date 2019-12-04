@@ -6,7 +6,7 @@ namespace MtvCoUkParser
 {
     public interface IMtvDriver
     {
-        Task<IDictionary<string, string>> GetChartNamesAsync();
+        Task<Dictionary<string, string>> GetChartNamesAsync();
         Task<Chart> GetChartAsync(string chartId);
     }
 }

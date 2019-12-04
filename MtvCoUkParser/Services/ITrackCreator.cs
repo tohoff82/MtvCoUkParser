@@ -6,6 +6,6 @@ namespace MtvCoUkParser.Services
 {
     public interface ITrackCreator
     {
-        Task<Track> CreateTrack(HtmlNode htmlNode, string chartId);
+        Track CreateTrack(HtmlNode htmlNode, string chartId);
     }
 }

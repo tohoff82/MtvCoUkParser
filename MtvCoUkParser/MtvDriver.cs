@@ -11,7 +11,7 @@ namespace MtvCoUkParser
         public MtvDriver()
             => Injector.Startup();
 
-        public async Task<IDictionary<string, string>> GetChartNamesAsync()
+        public async Task<Dictionary<string, string>> GetChartNamesAsync()
             => await Injector.Provider.GetService<INameCreatortor>()
                         .GetChartNamesAsync();
 
